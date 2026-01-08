@@ -1,15 +1,19 @@
 import Lake
 open Lake DSL
 
-package mil where
-  leanOptions := #[
-    ⟨`pp.unicode.fun, true⟩, -- pretty-prints `fun a ↦ b`
-    ⟨`autoImplicit, false⟩,
-    ⟨`relaxedAutoImplicit, false⟩]
+package «Main» {
+  -- add any package configuration options here
+}
+
+
+require mathlib from git
+  "https://github.com/leanprover-community/mathlib4.git" @ "v4.10.0"
+
 
 @[default_target]
-lean_lib test_problem where
-lean_lib Optlib where
+lean_lib «Main» {
+  -- add any library configuration options here
+}
 
-require mathlib from git "https://github.com/leanprover-community/mathlib4"@"v4.10.0"
-
+lean_lib test where
+  roots := #[`lean_files]
