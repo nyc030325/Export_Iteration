@@ -14,6 +14,3 @@ require mathlib from git
 lean_lib «Main» {
   -- add any library configuration options here
 }
-
-lean_lib test where
-  roots := #[`lean_files]
